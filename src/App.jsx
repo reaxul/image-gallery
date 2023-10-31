@@ -5,7 +5,7 @@ function App() {
   
 
   return (
-    <div>
+    <div className='flex items-center'>
      <ImageGallery></ImageGallery>
     </div>
   )
