@@ -38,12 +38,14 @@ function ImageGallery() {
     setFeatureImageIndex(selectedImages[0]);
     setSelectedImages([]);
   };
-
+console.log(typeof(selectedImages));
   return (
-      <div className="container">
-          <h1 className="text-2xl font-bold mb-4">Image Gallery</h1>
-          <hr />
-      <div className="image-gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="container bg-white rounded-md">
+          {selectedImages ? <h1 className="text-2xl font-bold mb-4 p-5">Selected Images</h1>
+         : <h1 className="text-2xl font-bold mb-4 p-5">Image Gallery</h1>
+        }
+      <hr />
+      <div className="image-gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-10">
         {images.map((image, index) => (
           <div
             key={index}
@@ -55,10 +57,10 @@ function ImageGallery() {
             <img
               src={image}
               alt={`Image ${index}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover border-4 rounded-lg"
             />
             {selectedImages.includes(index) && (
-              <div className="overlay absolute top-0 left-0 w-full h-full bg-black opacity-40 transition-opacity duration-300"></div>
+              <div className="overlay absolute top-0 left-0 w-full h-full bg-black opacity-40 transition-opacity duration-300 rounded-lg"></div>
             )}
           </div>
         ))}

@@ -5,9 +5,10 @@ function App() {
   
 
   return (
-    <div className='flex items-center'>
-     <ImageGallery></ImageGallery>
-    </div>
+    <div className="flex justify-center bg-gray-100 p-5">
+  <ImageGallery />
+</div>
+
   )
 }
 
